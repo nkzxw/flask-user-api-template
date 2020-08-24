@@ -25,8 +25,9 @@ export default {
         }
     },
     created() {
-        this.$axios.get("/").then(response => {
-            this.msg = response.data
+        let baseURL = 'http://127.0.0.1:5000/api/v1.0/'
+        this.$axios.get(baseURL).then(response => {
+            this.msg = response.data.data
         }).catch(error => {
             console.log(error)
             this.$Message.error(error)

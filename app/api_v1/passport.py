@@ -85,7 +85,7 @@ def verify_password(email_or_token, password):
         if not user or not user.verify_password(password):
             return False
     else:
-        user = User.verify_user_token(email_or_token)
+        user = User.verify_user_token(password)
         if not user:
             return False
         
